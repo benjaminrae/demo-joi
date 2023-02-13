@@ -1,6 +1,8 @@
 const paths = {
-  baseUrl: "/",
-  apiDocs: "/api-docs",
+  root: "/",
+  apiDocs: {
+    base: "/api-docs",
+  },
 };
 
 export default paths;
