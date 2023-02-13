@@ -5,15 +5,15 @@ dotenv.config();
 const {
   PORT: port,
   ORIGIN_WHITELIST: originWhitelist,
-  BASIC_AUTH_USERNAME: basicAuthUsername,
-  BASIC_AUTH_PASSWORD: basicAuthPassword,
+  SWAGGER_BASIC_AUTH_USERNAME: swaggerBasicAuthUsername,
+  SWAGGER_BASIC_AUTH_PASSWORD: swaggerBasicAuthPassword,
 } = process.env;
 
 export const environment = {
   port,
   originWhitelist: originWhitelist.split(","),
-  basicAuth: {
-    username: basicAuthUsername,
-    password: basicAuthPassword,
+  swaggerAuth: {
+    username: swaggerBasicAuthUsername,
+    password: swaggerBasicAuthPassword,
   },
 };

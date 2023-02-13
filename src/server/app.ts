@@ -27,7 +27,7 @@ app.use(
   apiDocs,
   basicAuth({
     users: {
-      [environment.basicAuth.username]: environment.basicAuth.password,
+      [environment.swaggerAuth.username]: environment.swaggerAuth.password,
     },
     challenge: true,
   }),
