@@ -7,6 +7,7 @@ const {
   ORIGIN_WHITELIST: originWhitelist,
   SWAGGER_BASIC_AUTH_USERNAME: swaggerBasicAuthUsername,
   SWAGGER_BASIC_AUTH_PASSWORD: swaggerBasicAuthPassword,
+  APP_NAME: appName,
 } = process.env;
 
 export const environment = {
@@ -16,4 +17,5 @@ export const environment = {
     username: swaggerBasicAuthUsername,
     password: swaggerBasicAuthPassword,
   },
+  appName,
 };
