@@ -1,10 +1,10 @@
 import { environment } from "./loadEnvironments.js";
-import debugCreator from "debug";
+import debugConfig from "./utils/debugConfig.js";
 import chalk from "chalk";
 import startServer from "./server/startServer.js";
 import type CustomError from "./CustomError/CustomError.js";
 
-const debug = debugCreator("api-gateway:root");
+const debug = debugConfig.extend("root");
 
 const { port } = environment;
 
