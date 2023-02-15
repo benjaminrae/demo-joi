@@ -20,6 +20,8 @@ jobs:
         env:
           DEBUG: ${{ secrets.DEBUG }}
           ORIGIN_WHITELIST: ${{ secrets.ORIGIN_WHITELIST }}
+          APP_NAME: ${{ secrets.APP_NAME }}
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
