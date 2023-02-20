@@ -9,6 +9,7 @@ import openApiDocument from "../openapi/index.js";
 import corsOptions from "./cors/corsOptions.js";
 import { environment } from "../loadEnvironments.js";
 import paths from "./routers/paths.js";
+import usersRouter from "./routers/usersRouter/usersRouter.js";
 
 const app = express();
 
@@ -32,6 +33,8 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(openApiDocument)
 );
+
+app.use(paths.users.base, usersRouter);
 
 app.use(unknownEndpoint);
 app.use(generalError);

@@ -8,6 +8,9 @@ const {
   SWAGGER_BASIC_AUTH_USERNAME: swaggerBasicAuthUsername,
   SWAGGER_BASIC_AUTH_PASSWORD: swaggerBasicAuthPassword,
   APP_NAME: appName,
+  MONGO_DB_DEBUG: mongoDbDebug,
+  MONGO_DB_URI: mongoDbUri,
+  JWT_SECRET: jwtSecret,
 } = process.env;
 
 export const environment = {
@@ -18,4 +21,7 @@ export const environment = {
     password: swaggerBasicAuthPassword,
   },
   appName,
+  mongoDbDebug: mongoDbDebug === "true",
+  mongoDbUri,
+  jwtSecret,
 };
