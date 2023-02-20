@@ -3,6 +3,7 @@ import debugConfig from "./utils/debugConfig.js";
 import chalk from "chalk";
 import startServer from "./server/startServer.js";
 import type CustomError from "./CustomError/CustomError.js";
+import connectDatabase from "./database/connectDatabase.js";
 
 const debug = debugConfig.extend("root");
 
@@ -12,6 +13,9 @@ try {
   await startServer(+port);
 
   debug(chalk.blue(`Server listening on port ${port}`));
+
+  await connectDatabase(environment.mongoDbUri);
+  debug(chalk.green("Connected to database"));
 } catch (error: unknown) {
   if ((error as CustomError).code === "EADDRINUSE") {
     debug(chalk.red(`Error with the server: port ${port} in use`));
